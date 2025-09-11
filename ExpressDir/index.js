@@ -15,13 +15,13 @@ app.get("/" , (req,res)=>{
 
 });
 
-app.get("/fruits" , (req,res)=>{
-    res.send("you contacted fruits path");
+
+app.get("/:username/:id", (req,res) =>{
+    let {username , id } =  req.params ;
+    let htmlstr = `<h1> welcome to the page of @ ${username}</h1>`;
+    res.send(htmlstr);
 });
 
-app.get("/apple",(req,res)=>{
-    res.send("you contacted apple path");
-});
   //  res.send("this is basic response");
     // res.send({
     //     name:"apple",
